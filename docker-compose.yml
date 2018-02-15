@@ -16,7 +16,7 @@ services:
       - 1883:1883
       - 9001:9001
     volumes: 
-      - /etc/home-assistant/mosquitto/data:/mosquitto/data
-      - /etc/home-assistant/mosquitto/log:/mosquitto/log
+      - /etc/homeassistant/mosquitto/data:/mosquitto/data
+      - /etc/homeassistant/mosquitto/log:/mosquitto/log
     restart: always
     
