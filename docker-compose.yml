@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web:
+    image: homeassistant/home-assistant
+    volumes:
+      - /etc/homeassistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    depends_on: 
+      - mqtt
+    ports:
+      - 8123:8123
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes: 
+      - /etc/home-assistant/mosquitto/data:/mosquitto/data
+      - /etc/home-assistant/mosquitto/log:/mosquitto/log
+    restart: always
+    
